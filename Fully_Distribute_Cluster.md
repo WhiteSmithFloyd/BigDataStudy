@@ -56,7 +56,11 @@ for JAVA_HOME
 <configuration>
     <property>
         <name>dfs.replication</name>
-        <value>1</value>
+        <value>3</value>
+    </property>
+    <property>
+        <name>dfs.namenode.secondary.http-address</name>
+        <value>h3:50090</value>
     </property>
 </configuration>
 ```
