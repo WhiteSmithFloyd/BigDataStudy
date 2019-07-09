@@ -24,12 +24,15 @@ ssh host
 
 ## 基于伪分布式部署完全分布式
 ### 集群部署规划
-h1               h2              h3
-HDFS 
-namenode                      secondaryNameNode
-datanode      datanode        datanode
-YARN
-NodeManager  ResourceManager  NodeManager
+|   h1   |   h2   |   h3   |
+| ---- | ---- | ---- |
+|   HDFS   |      |      |
+|   namenode   |      |   secondaryNameNode   |
+|   datanode   |   datanode   |   datanode   |
+|   YARN   |      |      |
+|   NodeManager   |   ResourceManager   |   NodeManager   |
+
+
 ### 修改配置文件
 #### core-site.xml
 ```xml
