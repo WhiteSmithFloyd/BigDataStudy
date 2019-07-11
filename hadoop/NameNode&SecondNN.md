@@ -1,0 +1,6 @@
+
+### 故障恢复
+因为SecondaryNameNode的current目录和主NameNode的current目录的布局相同，所以当主NameNode发生故障的时候，可以从SecondaryNameNode来恢复数据
++ 将SecondaryNameNode中的数据拷贝到NameNode存储数据的目录
++ 使用 -importCheckpoint选项启动namenode守护进程，从而将secondaryNameNode用作新的主NameNode
+
