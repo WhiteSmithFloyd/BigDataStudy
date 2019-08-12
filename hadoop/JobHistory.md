@@ -7,6 +7,10 @@ jobhistory配置
 <name>yarn.log-aggregation-enable</name>
 <value>true</value>
 </property>
+<property>
+<name>yarn.log-aggregation.retain-seconds</name>
+<value>106800</value>
+</property>
 ```
 
 2. 在mapred-site.xml中添加
