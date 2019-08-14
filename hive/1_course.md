@@ -1,6 +1,6 @@
-#Hive
+# Hive
 
-###Hive的安装
+### Hive的安装
 
 1. 下载apache-hive.1.2.2.tar.gz，然后解压
 
