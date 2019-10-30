@@ -31,7 +31,7 @@
 3. region server
 编辑`regionservers`文件
 ```
-h1 # [hostname]
+h1 	# [hostname] 标记自己的主机名 类似于hadoop的slave节点
 ```
 
 ### Using Right lib 
