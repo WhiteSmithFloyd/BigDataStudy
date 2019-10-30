@@ -19,7 +19,7 @@
 
 
 
-![structure](<https://github.com/WhiteSmithFloyd/ress/blob/master/imgs/hbase/hbase_1.png>)
+![structure](https://github.com/WhiteSmithFloyd/ress/blob/master/imgs/hbase/hbase_1.png)
 
 
 ### HBase的读写流程 Flush Compation Split 
