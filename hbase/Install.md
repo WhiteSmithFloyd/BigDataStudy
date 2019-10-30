@@ -23,7 +23,7 @@
 <!-- 指定zk的实例化地址，zk是hbase的访问入口，客户端访问时都要经过zk -->
 <property>
 	<name>hbase.zookeeper.quorum</name>
-	<value>[hostname]</value>
+	<value>http://h1:2181</value>
 </property>
 
 ```
