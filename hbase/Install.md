@@ -23,7 +23,7 @@
 <!-- 指定zk的实例化地址，zk是hbase的访问入口，客户端访问时都要经过zk -->
 <property>
 	<name>hbase.zookeeper.quorum</name>
-	<value>http://h1:2181</value>
+	<value>h1:2181,h2:2181,h3:2181</value>
 </property>
 
 ```
@@ -32,6 +32,8 @@
 编辑`regionservers`文件
 ```
 h1 	# [hostname] 标记自己的主机名 类似于hadoop的slave节点
+h2
+h3
 ```
 
 ### Using Right lib 
