@@ -43,6 +43,9 @@ h1 	# [hostname] 标记自己的主机名 类似于hadoop的slave节点
 1. 先启动 hadoop 和 zk
 2. 在启动hbase相关的两个进程
 ```shell
+bin/start-hbase.sh
+bin/stop-hbase.sh
+# 或者
 bin/hbase-daemon.sh start master 
 bin/hbase-daemon.sh start regionserver 
 
