@@ -56,3 +56,16 @@ bin/hbase-daemon.sh start regionserver
 
 ### Testing
 webUI 端口 `60010`
+
+
+# Hbase HA
+在任意节点上手动启动HMaster进程，即可实现HA
+```shell
+ bin/hbase-daemon.sh start master 
+```
+在http://h1:60010中，Backup Masters栏中可以找到该HA节点
+
+
+
+
+
