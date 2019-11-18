@@ -1,8 +1,6 @@
 # Oozie Installation
 
-> #### 一、将`Oozie`安装包上传到`Master`节点并解压
-
-​       
+### 一、将`Oozie`安装包上传到`Master`节点并解压     
 
 ```shell
 $ sudo tar -zxvf oozie-4.1.0-cdh5.14.0.tar.gz -C /opt/cludera/
@@ -11,7 +9,7 @@ $ sudo mv oozie-4.1.0-cdh5.14.0/ oozie
 $ sudo chown -R hadoop ./oozie/
 ```
 
-> #### 二、为 `oozie` 分配 `hdfs` 的权限
+### 二、为 `oozie` 分配 `hdfs` 的权限
 
 ​       为`oozie`分配`hdfs`的权限，编辑集群上所有机器上的 `core-site.xml` 文件 ，增加如下配置：
 
@@ -26,7 +24,7 @@ $ sudo chown -R hadoop ./oozie/
 </property>
 ```
 
-> #### 三、解压`oozie`目录下的`hadooplibs.tar.gz`,获取`hadoop`的`jar` 包,在`hadooplibs`目录下
+### 三、解压`oozie`目录下的`hadooplibs.tar.gz`,获取`hadoop`的`jar` 包,在`hadooplibs`目录下
 
 ```shell
 $ cd oozie/
@@ -36,7 +34,7 @@ $ sudo mkdir libext
 $ sudo cp -r oozie-4.1.0-cdh5.14.0/hadooplibs/hadooplib-2.6.0-cdh5.14.0.oozie-4.1.0-cdh5.14.0/* libext/
 ```
 
-> #### 三、复制  `ExtJS 2.2`到`/oozie/libext` 目录下
+### 三、复制  `ExtJS 2.2`到`/oozie/libext` 目录下
 
 下载`ExtJs`的包：<http://archive.cloudera.com/gplextras/misc/ext-2.2.zip>
 
@@ -44,7 +42,7 @@ $ sudo cp -r oozie-4.1.0-cdh5.14.0/hadooplibs/hadooplib-2.6.0-cdh5.14.0.oozie-4.
 $ sudo cp ext-2.2.zip /opt/cloudera/oozie/libext/
 ```
 
-> #### 四、设置`Oozie`使用的数据库(`MySQL`)
+### 四、设置`Oozie`使用的数据库(`MySQL`)
 
 ​       这里提到的数据库是关系型数据库，用来存储`Oozie`的数据。`Oozie`自带一个`Derby`，不过`Derby`只能拿来做实验，在实际应用中不适用。这里我选择`mysql`作为`Oozie`的数据库，接下来就是创建`Oozie`用的数据库
 
@@ -90,7 +88,7 @@ mysql> flush privileges;
 $ sudo cp mysql-connector-java-5.1.45-bin.jar /opt/cloudera/oozie/lib
 ```
 
-> #### 五、将jar包打包到Oozie的war包中
+### 五、将jar包打包到Oozie的war包中
 
 ​       使用`oozie-setup.sh` 脚本配置`Oozie`，将所有的组件添加到`libext/` 目录下。
 打包成`jar`包的命令如下：
@@ -137,7 +135,7 @@ $ ls
 oozie.war  ROOT
 ```
 
-> #### 六、`bin/oozie-setup.sh` 使用讲解
+### 六、`bin/oozie-setup.sh` 使用讲解
 
 ```shell
 bin/oozie-setup.sh prepare-war [-d directory] [-secure]
@@ -148,7 +146,7 @@ bin/oozie-setup.sh prepare-war [-d directory] [-secure]
 
 参数说明：
 
-> ###### 1. `sharelib create -fs <FS_URI> [-locallib <PATH>]`
+#### 1. `sharelib create -fs <FS_URI> [-locallib <PATH>]`
 
 上传新的`sharelib`到`hdfs`上
 ​       第一个参数：`hdfs` 的URI
@@ -182,11 +180,11 @@ the destination path for sharelib is: /user/hadoop/share/lib/lib_20180815192828
 
 hdfs.png
 
-> ###### 2.  `sharelib upgrade -fs <FS_URI> [-locallib <PATH>]`
+#### 2.  `sharelib upgrade -fs <FS_URI> [-locallib <PATH>]`
 
 Upgrade 命令已经被抛弃了, 可以使用create 命令去创建新版本的`sharelibone`
 
-> ###### 3. ` db create|upgrade|postupgrade -run [-sqlfile <FILE>]`
+#### 3. ` db create|upgrade|postupgrade -run [-sqlfile <FILE>]`
 
 创建`Oozie`数据库，可使用如下命令进行创建：
 
@@ -210,7 +208,7 @@ The SQL commands have been written to: oozie.sql
 
 
 
-> #### 六、启动Oozie
+### 六、启动Oozie
 
 ```shell
 $ ./bin/oozied.sh start
